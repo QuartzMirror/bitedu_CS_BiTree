@@ -1,0 +1,24 @@
+void BiTreeDepth(BiTree T){
+	InitQueue(Q);
+	Queue p=T;
+	int count,Dp=0;
+	EnQueue(Q,T);
+	count++;
+	if(T!=NULL){
+		while(IsEmpty(Q)!=NULL){
+			DeQueue(Q,p);
+			count--;
+			if(count==0)
+				Dp++;
+			visit(p);
+			if(p->lchild!=NULL){
+				EnQueue(Q,p->lchild);
+				count++;
+			}
+			if(p->rchild!=NULL){
+				EnQueue(Q,p->rchild);
+				count++;
+			}
+		}
+	}
+}
