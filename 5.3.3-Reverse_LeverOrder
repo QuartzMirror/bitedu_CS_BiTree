@@ -1,0 +1,23 @@
+void LevelOrder(BiTree T){
+	InitStack S;
+	InitQueue Q;
+	BiTree p=T;
+	EnQueue(Q,T);
+	if(p!=NULL){
+		while(!IsEmpty(Q)){
+			DeQueue(Q,p);
+			Push(S,p);
+			if(p->lchild!=NULL)
+				p=p->lchild;
+			if(p->rchild!=NULL)
+				p=p->rchild;
+		}
+		while(!IsEmpty(S)){
+			Pop(S,p);
+			visit(p);
+		}
+	}
+}
+
+//为什么一定要判空if(p!=NULL)
+//p和T什么关系？
