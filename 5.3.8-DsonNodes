@@ -9,14 +9,23 @@ int DsonNodes(BiTree T){
 
 //当然，本题也可以设置一个全局变量Num
 //每遍历到一个结点时，判断每个结点是否是分支结点
+//不过没有效率要求的话，确实是上边解法书写更简便
+
 int Num=0;
 void PreOrder(BiTree T){
   InitStack(S);
   Push(S,T);
   BiTree p=T;
-  while(!=IsEmpty(S)){
-    if(p){
+  while(p!=NULL&&!=IsEmpty(S)){
+    if(p!=NULL){
       Pop(S,p);
       visit(p->data);
-    }
-    else
+	if(p->lchild!=NULL&&p->rchild!=NULL)
+		Num++;
+	if(p->lchild!=NULL)
+		Push(S,p->lchild);
+	if(p->rchild!=NULL)
+		Push(S,p->rchild);
+		}
+	}
+}
