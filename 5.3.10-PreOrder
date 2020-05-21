@@ -1,0 +1,34 @@
+void PreOrder(BiTree T,int k){
+	InitStack S;
+	BiTree p=T;
+	int i=0;
+	Push(S,p);
+	if(p!=NULL&&!IsEmpty(S)){
+		Pop(S,p);
+		i++;
+		if(i==k)
+			return p->data;
+		if(p->lchild!=NULL)
+			Push(p->lchild);
+		if(p->rchild!=NULL)
+			Push(p->rchild);
+	}
+}
+
+//作为效率党人
+//当然是非递归遍历更有优越性
+//不过看到递归算法时
+//就想到了👴写的C语言
+int i=1;
+ElemType PreOrder(BiTree b,int k){
+  if(b==NULL)
+    return '#';
+  if(i==k)
+    return b->data;
+  i++;
+  ch=PreNode(b->lchild,k);
+  if(ch!='#')
+    return ch;
+  ch=PreOrder(b->rchild,k);
+    return ch;
+}
