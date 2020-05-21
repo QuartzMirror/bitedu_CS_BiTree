@@ -1,0 +1,24 @@
+void IsComplete(BiTree T){
+	InitQueue(Q);
+	if(!T)
+		return true;
+	BiTree p=T;
+	EnQueue(Q,T);
+	while(!IsEmpty(Q)){
+		DeQueue(Q,p);
+		if(p){
+			EnQueue(Q,p->lchild);
+			EnQueue(Q,p->rchild);
+		}
+		else
+			while(!IsEmpty(Q)){
+				DeQueue(Q,p);
+				if(p)
+					return false;
+			}
+		return 1;
+	}
+}
+
+//p!=NULL和!=IsEmpty(Q);
+//这两个的作用区别
