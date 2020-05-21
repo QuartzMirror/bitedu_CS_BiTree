@@ -1,0 +1,21 @@
+void ReverseBiTree(BiTree T){
+	if(T==NULL)
+		return 0;
+	ElemType temp=T->lchild;
+	T->lchild=T->rchild;
+	T->rchild=temp;
+	ReverseBiTree(p->lchild);
+	ReverseBiTree(p->rchild);
+}
+
+//原本还说这题好没意思
+//看了答案：“确实是的”
+void swap(BiTree T){
+  if(p){
+    swap(T->lchild);
+    swap(T->rchild);
+    temp=T->lchild;
+    T->lchild=T->rchild;
+    T->rchild=temp;
+  }
+}
