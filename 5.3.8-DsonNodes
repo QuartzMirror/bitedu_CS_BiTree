@@ -20,12 +20,12 @@ void PreOrder(BiTree T){
     if(p!=NULL){
       Pop(S,p);
       visit(p->data);
-	if(p->lchild!=NULL&&p->rchild!=NULL)
-		Num++;
-	if(p->lchild!=NULL)
-		Push(S,p->lchild);
-	if(p->rchild!=NULL)
-		Push(S,p->rchild);
-		}
-	}
+      if(p->lchild!=NULL&&p->rchild!=NULL)
+	Num++;
+      if(p->lchild!=NULL)
+	Push(S,p->lchild);
+      if(p->rchild!=NULL)
+	Push(S,p->rchild);
+      }
+   }
 }
