@@ -1,0 +1,22 @@
+int DsonNodes(BiTree T){
+	if(T==NULL)
+		return 0;
+	else if(T->lchild!=NULL&&T->rchild!=NULL)
+		return DsonNodes(T->lchild)+DsonNodes(T->rchild)+1;
+	else
+		return DsonNodes(T->lchild)+DsonNodes(T->rchild);
+}
+
+//当然，本题也可以设置一个全局变量Num
+//每遍历到一个结点时，判断每个结点是否是分支结点
+int Num=0;
+void PreOrder(BiTree T){
+  InitStack(S);
+  Push(S,T);
+  BiTree p=T;
+  while(!=IsEmpty(S)){
+    if(p){
+      Pop(S,p);
+      visit(p->data);
+    }
+    else
