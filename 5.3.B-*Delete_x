@@ -1,0 +1,38 @@
+//该题充分应用了递归算法思想
+
+void DeleteTree(BiTree T){
+	if(T!=NULL){
+		DeleteTree(bt->lchild);
+		DeleteTree(bt->rchild);
+		free(T);
+	}
+}
+void Search(BiTree T,ElemType x){
+	InitQueue(Q);
+	if(T==NULL){
+		if(T->data==x){
+			Delete(T);
+			Exit(0);
+		}
+	}
+	EnQueue(Q,T);
+	while(!IsEmpty(Q)){
+		DeQueue(Q,p);
+		if(p->lchild!=NULL){
+			if(p->lchild->data==x){
+				DeleteTree(bt->lchild);
+				p->lchild=NULL;
+			}
+			else
+				EnQueue(Q,p->lchild);
+		}
+		if(p->rchild!=NULL){
+			if(p->rchild->data==x){
+				DeleteTree(bt->rchild);
+				p->rchild=NULL;
+			}
+			else
+				EnQueue(Q,p->rchild);
+		}
+	}
+}
