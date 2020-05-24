@@ -22,3 +22,20 @@ BiTree PreInCreate(ElemType A[],ElemType B[],int l1,int l2,int h1,int h2){
 //8行一开始用的while(B[l2]!=root->data) l2++;
 //但是l1,l2,h1,h2除了在递归嵌套中使用不建议在途中使用
 //而6个参数的嵌套递归调用确是没看懂
+
+void CreateBiTree(int A[],int B[],int l1,int l2,int h1,int h2){
+	if(l1<h1||l2<h2)
+		return false;
+	int llen,rlen;
+	int i,j,k=0;
+	int p=(BiTree*)malloc(sizeof(BiTree));
+	p->data=A[l1];
+	while(B[i]!=p->data)
+		i++;
+	llen=i-l1;
+	rlen=h1-i;
+	CreateBiTree(A[],B[],l1+1,l2,l1+llen-1,l2+llen-1);
+	CreateBiTree(A[],B[],h1-rlen,h2-rlen,h1,h2;
+}
+//九牛二虎之力写出来的给👴爪巴的代码
+//再来吧
