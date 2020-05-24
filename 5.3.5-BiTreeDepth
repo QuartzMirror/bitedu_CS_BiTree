@@ -22,3 +22,7 @@ void BiTreeDepth(BiTree T){
 		}
 	}
 }
+
+//参照范例 本题还有rear front last level等复杂的判断
+//以实现树的深度求值
+//还是挺有意思的
