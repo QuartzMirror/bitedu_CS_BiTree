@@ -39,3 +39,18 @@ void CreateBiTree(int A[],int B[],int l1,int l2,int h1,int h2){
 }
 //九牛二虎之力写出来的给👴爪巴的代码
 //再来吧
+//来了来了
+int l1=1,l2=1;
+int h1=A.length,h2=B.length;
+void CreBiTree(A[],B[],int l1,int h1,int l2,int h2){
+	BiTree root=(BtNode*)malloc(sizeof(BtNode));
+	root->data=A[l1];
+	for(int i=0;B[i]!=root->data;i++);
+	int llen=i-l1;
+	int rlen=h1-i;
+	root->lchild=CreBiTree(A,B,l1+1,l1+llen,l2,l2+llen-1);
+	root->rchild=CreBiTree(A,B,h1-rlen+1,h1,h2-rlen+1,h2);
+}
+//两点
+//一是没有考虑到空子树的情况
+//二是没有return root;
