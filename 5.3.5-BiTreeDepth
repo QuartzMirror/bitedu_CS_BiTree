@@ -26,3 +26,24 @@ void BiTreeDepth(BiTree T){
 //参照范例 本题还有rear front last level等复杂的判断
 //以实现树的深度求值
 //还是挺有意思的
+int Depth(BiTree T){
+	if(T==NULL)
+		return 0;
+	int front=-1,rear=-1;
+	int last=0,level=0;
+	BiTree Q[MaxSize];
+	Q[++rear]=T;
+	BiTree p=T;
+	while(front<rear){
+		p=Q[++front];
+		if(p->lchild!=NULL)
+			Q[++rear]=p->lchild;
+		if(p->rchild!=NULL)
+			Q[++rear]=p->rchild;
+		if(front==last){
+			level++;
+			last=rear;
+		}
+	}
+	return level;
+}
