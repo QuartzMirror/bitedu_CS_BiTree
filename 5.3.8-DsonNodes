@@ -11,6 +11,9 @@ int DsonNodes(BiTree T){
 //每遍历到一个结点时，判断每个结点是否是分支结点
 //不过没有效率要求的话，确实是上边解法书写更简便
 
+//update
+//我总感觉递归的套路有些怪异 = =！
+
 int Num=0;
 void PreOrder(BiTree T){
   InitStack(S);
