@@ -22,3 +22,9 @@ void IsComplete(BiTree T){
 
 //p!=NULL和!=IsEmpty(Q);
 //这两个的作用区别
+
+//update
+//这题不难
+//但是不能用套路
+//所以还是写不对
+//关于出队判空的问题
