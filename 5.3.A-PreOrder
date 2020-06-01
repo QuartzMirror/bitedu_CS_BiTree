@@ -1,3 +1,7 @@
+//update
+//这写的都是啥？
+//序列的非递归遍历用的是栈吗？
+
 void PreOrder(BiTree T,int k){
 	InitStack S;
 	BiTree p=T;
@@ -31,4 +35,24 @@ ElemType PreOrder(BiTree b,int k){
     return ch;
   ch=PreOrder(b->rchild,k);
     return ch;
+}
+
+//update
+void PreOrder(BiTree T,int k){
+	InitStack(S);
+	BiTree p=T;
+	int count=0;
+	while(!IsEmpty(S)||p!=NULL){
+		if(p!=NULL){
+			count++;
+			if(count==k)
+				visit(p);
+			Push(S,p);
+			p=p->lchild;
+		}
+		else{
+			Pop(S,p);
+			p=p->rchild;
+		}
+	}
 }
