@@ -1,0 +1,37 @@
+//This is true coding!
+
+typedef struct{
+	bitree bt;
+	int tag;
+}stack;
+
+BiTree Ancestor(BiTree ROOT,BiTNode *p,BiTNode *q){
+	int top=0;
+	BiTree bt=ROOT;
+	stack s[],s1[];
+	while(top>0||bt!=NULL){
+		if(bt!=NULL){
+			s[++top].t=bt;
+			s[top].t=0;
+			bt=bt->lchild;
+		}
+		while(top!=0&&s[top].tag=1){
+			if(s[top].t==p){
+				for(i=1;i<=top;i++)
+					s1[i]=s[i];
+					top1=top;
+			}
+			if(s[top].t==q)
+				for(i=top;i>0;i--){
+					for(j=top1;j>0;j--)
+						if(s1[j].t==s[i].t)
+							return s[i].t;
+				}
+				top--;
+		}
+		if(top!=0){
+			s[top].tag=1;
+			bt=s[top].t->rchild;
+		}
+	}
+}
